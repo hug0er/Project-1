@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<head>
+        <title>
+            Review
+        </title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    </head>
+    
+    
+    <body>
+        <div class="header">
+            <h1>New review</h1>
+            <p> We believe in your judgment</p>
+        </div>
+    
+        <div class="content">
+            <p>Please add a rating from 1 to 5 or an error will occur :(, a comment will also help other users :).</p>
+                <form action="\review_sub/{{isbn}}" method="post">
+                    <input type="number" name="rating" placeholder="Enter Your 1-5 Rating">
+                    <input type="text" name="review" placeholder="Enter Your Review of the book">
+                    <button >Add review</button>
+                <form>
+        </div>
+    
+        <div class="final">
+                <a href="/logout">Log out</a>
+                
+        </div>
+        <div class="final">
+                <a href="/search">Search another book</a>             
+        </div>
+        
+    </body>
+
+

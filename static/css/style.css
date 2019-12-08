@@ -1,0 +1,22 @@
+body {
+    background-color: #cccccc;
+   }
+
+.header {
+    padding: 60px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    font-size: 20px;
+  }
+
+  .content {
+    padding: 20px;
+    color: black;
+    font-size: 15px;
+  }
+
+  .final{
+    text-align: center;
+    font-size: 25px;
+  }

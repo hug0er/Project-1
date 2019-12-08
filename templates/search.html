@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Search Books</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+
+<body>
+    <div class="header">
+        <h1>Welcomeeeee</h1>
+        <p> Welcomeeeee, to the best book review page.</p>
+    </div>
+
+    <div class="content">
+        <p>Search a book by isbn, title or author</p>
+        <form action="" method="post">
+            <input type="text" class="form-control" placeholder="Search a book by isbn, title or author" name="search_data">
+        </form>
+
+        <ol>
+            {% if results %}
+            {% for result in results %}
+            <li><a href="search/{{result.isbn}}">{{result.isbn}} - {{ result.title }}, {{result.author}}</a> </li>
+            {% endfor %}
+            {% endif %}
+            {% if results == [] %}
+            <li> NO results </li>
+            {% endif %}
+        </ol>
+    </div>
+</body>

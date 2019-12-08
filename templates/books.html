@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<head>
+    <title>{{book.title}}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+
+<body>
+    <div class="header">
+        <h1>{{book.title}}</h1>
+        <p>Author : {{book.author}}</p>
+        <p>Year :{{book.year}}</p>
+        <p>ISBN :{{book.isbn}}</p>
+    </div>
+
+    <div class="content">
+        <h2>Reviews: </h2>
+
+        {% if reviews|length == 0 %}
+        <h3>Book not reviewed yet</h3>
+        {% else %}
+        <ol>
+            {% for review in reviews %}
+            <ul class="list-group">
+                <li class="list-group-item"> rating : {{review.rating}} ---- comment: {{review.review}}</li>
+
+            </ul>
+            {% endfor %}
+        </ol>
+        {% endif %}
+
+        <h2>Goodreads' Reviews: </h2>
+        <P>Here you will find book reviews from our friend page Goodreads :)</P>
+        <h4> Average rating: {{res.average_rating}}</h3>
+            <h4> Number of ratings: {{res.ratings_count}}</h3>
+    </div>
+
+    <div class="final">
+        <a href="/review/{{isbn}}"> Add a new review </a> </li>
+    </div>
+    <div class="final">
+        <a href="/search">Search another book</a>
+    </div>
+    <div class="final">
+            <a href="/logout">Log out</a>
+            
+    </div>
+</body>

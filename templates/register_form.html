@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<head>
+  <title>
+    Register
+  </title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+
+<body>
+  <div class="header">
+    <h1>Register</h1>
+    <p> Register, with a new Username.</p>
+  </div>
+
+  <div class="content">
+    <form action="\register" method="post">
+      <input type="text" name="username" placeholder="Enter Your Name">
+      <input type="password" name="password" placeholder="Enter Your Password">
+      <button>Register</button>
+    </form>
+
+  </div>
+</body>
